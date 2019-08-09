@@ -58,7 +58,12 @@ def edit(request, model_id):
             return redirect('model_detail', model_id)
 
     else:
-        form = ModelsForm()
+        form = ModelsForm(instance=model)
+        context = {
+            'form':form,
+            'writing':True,
+            'now':'edit',
+        }
     return render(request, 'model/model_edit.html', {'form': form, })
 
 
@@ -155,7 +160,12 @@ def photo_edit(request, photo_id):
             return redirect('photo_detail', photo_id)
 
     else:
-        form = PhotoForm()
+        form = PhotoForm(instance=photo)
+        context = {
+            'form':form,
+            'writing':True,
+            'now':'edit',
+        }
     return render(request, 'photo/photo_edit.html', {'form': form, })
 
 

@@ -4,19 +4,18 @@
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 
 .logo {
-    z-index: 1;
-    position: fixed;
+    position: absolute;
     top: 5%;
     left: 10%;
     width: 7%;
 }
 
 .title {
-    z-index: 1;
     position: absolute;
     display: inline;
     top: 7%;
@@ -60,36 +59,41 @@ body {
     color: rgb(68,173,219);
 }
 
-.keywords {
-    width: 40%;
+/* base */
+
+.a {
+    width: 100%;
+    height: 10%;
     position: absolute;
     top: 20%;
+    display: flex;
+}
+
+.keywords {
+    margin: 2% 0 0 0 ;
+    padding: 0;
+    position: relative;
     left: 10%;
+    width: 80%;
     display: inline;
 }
 
+.inline {
+    display: inline;
+    margin-right: 5%;
+
+}
+
 .keywords_title {
-    float: left;
-}
-
-.keywords_button {
-    float: right;
-}
-
-.keywords_title > p {
     font-family: 'Lacquer', sans-serif;
     color: rgb(77,139,124);
     font-size: 1.3em;
-    text-align: center;
-}
-
-.keywords_button {
-    text-align: center;
+    text-decoration: none;
 }
 
 .cute {
     color: black;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background-color: rgb(249,194,69);
     border: rgb(249,194,69) 2px solid;
     border-radius: 4px;
@@ -97,7 +101,7 @@ body {
 
 .cool {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background-color: rgb(253,79,91);
     border: rgb(253,79,91) 2px solid;
     border-radius: 4px;
@@ -105,7 +109,7 @@ body {
 
 .mono {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background-color: black;
     border: black 2px solid;
     border-radius: 4px;
@@ -113,165 +117,183 @@ body {
 
 .plus {
     color: white;
-    font-size: 1.2em;
+    font-size: 1.1em;
     background-color: rgb(77,139,124);
     border: rgb(77,139,124) 2px solid;
     border-radius: 4px;
 }
 
-.upload_post{
-    position: fixed;
-    top: 23%;
-    right: 10%;
-    font-family: 'Lacquer', sans-serif;
-
-}
-.upload_post > a > button{
+.upload_post {
     border: rgb(77,139,124) 2px solid;
-    font-size: 1.5em;
+    font-family: 'Lacquer', sans-serif;
     color: rgb(77,139,124);
-    margin-left: 26%;
-    margin-right: 0;
+    font-size: 1.3em;
     background-color: white;
+    margin-left: 35%;
 }
 
-.edde{
-position: relative;
-    left: 80%;
-    top: 40%;
-    width: 20%;
-    height: 30%;
+.paginator {
+    position: absolute;
+    top: 22.3%;
+    right: 10%;
 }
 
-.edde > {} >a >.fifth {
-    z-index: 2;
-    background-color: black;
+.paginator > a {
+    color: rgb(68,173,219);
+    font-size: 2em;
+    text-decoration: none;
 }
 
+.paginator > span {
+    color: rgb(77,139,124);
+    font-size: 2em;
+}
 
+/* base_block */
 
+.b {
+    position: absolute;
+    width: 100%;
+    top:35%;
+}
 
 .array {
-    position: fixed;
-    top: 33%;
-    left: 10%;
-    width: 80%;
-    height: 50%;
-    background-color: white;
     display: flex;
     flex-direction: row;
-}
-.detail_cut > ul >h2{
-    color: white;
-    font-family: 'Lacquer', sans-serif;
-    font-size: 2.3em;
-    margin-bottom: 2%;
-}
-
-.detail_cut > ul > h3{
-    color: yellow;
-    margin-right: 1%;
-}
-
-.detail_cut > ul >h5{
-    color: yellow;
-    margin-right: 1%;
-    margin-top: 1%;
-}
-
-
-
-.detail_cut > ul{
-     z-index: 1;
-    position: fixed;
-    display: inline;
-    top: 24%;
-    left: 0;
     width: 80%;
-    height: 100%;
-    background-color: rgb(77,139,124);
-
+    margin-left: 10%;
 }
 
-.card{
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.card {
     margin: auto;
     display: block;
-    width: 23%;
+    width: 24%;
     height: 82%;
 
 }
 
-.array > .card{
+.array > .card {
     background-color: white;
     border-radius: 4px;
-    width:
 }
 
 
-.box-1 > img {
+.box-1 > a > img {
     position: relative;
-    top: 0;
-    left: 0;
     width:100%;
     padding: 0;
-    border-radius: 0.7em;
+    border-radius: 4px;
 }
 
 
 .box-2{
     position: relative;
-    top: 0;
-    left: 0;
     background-color: white;
-    width:98%;
+    width:96%;
     height: 20%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin: 0 2%;
     padding: 0;
-
 }
 
-.box-2 > h4 {
-    color: rgb(77,139,124);
-}
-
-.box-2 > a > p {
-    color: rgb(77,139,124);
-}
-
-.paginator {
-    position: absolute;
-    top: 83%;
-    left: 45%;
-    width: 10%;
-}
-
-.paginator > a {
-    font-family: 'Lacquer', sans-serif;
-    color: rgb(77,139,124);
+.c {
     font-size: 1.2em;
-    text-decoration: none;
-    margin-right: 3%;
+    color: rgb(77,139,124);
+    margin-bottom: 0;
 }
 
+.d {
+    font-size: 1em;
+    font-family: 'Alfa Slab One', cursive;
+    color: rgb(68,173,219);
+    margin-top: 0.2em;
+}
 
+/* post */
 
-
-
-.form-post > form {
-    overflow: scroll;
+.e {
     position: absolute;
-    top: 18%;
-    right: 40%;
+    top: 20%;
+    height: 70%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
-.form-post > form > .sixth {
-    position: relative;
-    top: 50%;
-    left: 10;
+.post {
+    width: 50%;
+    margin-left: 30%;
+}
+
+.form-post {
+    color: rgb(77,139,124);
+    font-family: 'Lacquer', sans-serif;
+}
+
+.post_button {
+    float: right;
+    margin-right: 20%;
+    color: rgb(77,139,124);
+    font-family: 'Lacquer', sans-serif;
+    background-color: white;
+    border: rgb(77,139,124) 2px solid;
+    font-size: 1.2em;
+}
+
+/* detail */
+
+.f {
+    position: absolute;
+    top: 30%;
+    width: 70%;
+    min-height: 70%;
+    background-color: rgb(77,139,124);
+}
+
+.detail {
+    margin: 5% 15%;
+}
+
+.detail > p {
+    color: rgb(249,192,69);
+}
+
+.detail_title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.detail_username {
+    font-size: 1em;
+}
+
+.detail_content {
+    font-size: 1.2em;
+    margin-top: 5%;
+}
+
+.g {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    width: 30%;
+    min-height: 70%;
+}
+
+.detail_back > a > button {
+    color: rgb(77,139,124);
+    border: rgb(77,139,124) 2px solid;
+    background-color: white;
+    font-family: 'Lacquer', sans-serif;
+    font-size: 1.3em;
+    margin: 10% 0 0 20%;
+}
+
+.detail_active > a > button {
+    color: rgb(77,139,124);
+    border: rgb(77,139,124) 2px solid;
+    background-color: white;
+    font-family: 'Lacquer', sans-serif;
+    font-size: 1.3em;
+    margin: 10% 0 0 20%;
+    display: block;
 }

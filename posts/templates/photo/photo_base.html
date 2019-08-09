@@ -1,15 +1,13 @@
 
 <head>
     {% load  staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/model_photo.css' %}">
 </head>
 <body>
 
-<a href="{% url 'index' %}">
-    <img class="logo" src="{% static 'image/logo.png' %}" alt="logo">
-</a>
+    <a href="{% url 'index' %}">
+        <img class="logo" src="{% static 'image/logo.png' %}" alt="logo">
+    </a>
     <div class="title">
         <p>photographer</p>
     </div>
@@ -22,23 +20,37 @@
             <a href="{% url 'signup' %}">registration</a>
         {% endif %}
     </div>
-    <div class="keywords">
-        <p>keywords</p>
+    <div class="a">
+        <div class="keywords">
+            <div class="inline">
+                <a class="keywords_title" href="">keywords</a>
+            </div>
+            <div class="inline">
+                <a href="{% url 'photo_filter_cute' %}"><button class="cute">큐티</button></a>
+                <a href="{% url 'photo_filter_cool' %}"><button class="cool">청량</button></a>
+                <a href="{% url 'photo_filter_bnw' %}"><button class="mono">흑백</button></a>
+                <a href="{% url 'photo_filter_plus' %}"><button class="plus">플러스모델</button></a>
+            </div>
+            <div class="inline">
+                <a href="{% url 'photo_post' %}"><button class="upload_post">upload</button></a>
+            </div>
+        </div>
     </div>
-
-
-   <div class="row-key">
-        <a href="{% url 'filter_cute' %}"><button class="cute">큐티</button></a>
-        <a href="{% url 'filter_cool' %}"><button class="cool">청량</button></a>
-        <a href="{% url 'filter_bnw' %}"><button class="mono">흑백</button></a>
-        <a href="{% url 'filter_plus' %}"><button class="plus">플러스모델</button></a>
-   </div>
-    <div class="upload_post">
-        <a href="{% url 'photo_post' %}"><button>upload</button></a>
+    <div class="paginator">
+        {% if is_paginated %}
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}">◀</a>
+            {% else %}
+            <span>◀</span>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">▶</a>
+            {% else %}
+                <span>▶</span>
+            {% endif %}
+        {% endif %}
     </div>
-
-{% block content %}
-{% endblock content %}
-
+    {% block content %}
+    {% endblock %}
 </body>
 
