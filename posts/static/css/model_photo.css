@@ -39,10 +39,6 @@ body {
     color: rgb(77,139,124);
 }
 
-
-
-
-
 .category {
     z-index: 2;
     top: 3%;
@@ -65,21 +61,30 @@ body {
 }
 
 .keywords {
-    z-index: 2;
-    position: fixed;
-    top: 23%;
-    left:10%;
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    display: inline;
+}
+
+.keywords_title {
+    float: left;
+}
+
+.keywords_button {
+    float: right;
+}
+
+.keywords_title > p {
     font-family: 'Lacquer', sans-serif;
     color: rgb(77,139,124);
     font-size: 1.3em;
+    text-align: center;
 }
 
-
-
-.row-key{
-    position: fixed;
-    top: 23%;
-    left: 17%;
+.keywords_button {
+    text-align: center;
 }
 
 .cute {

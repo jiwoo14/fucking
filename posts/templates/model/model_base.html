@@ -1,36 +1,41 @@
 
 <head>
     {% load  staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/model_photo.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 </head>
 <body>
 
-<a href="../../../user/templates/user/home.html">
-    <img class="logo" src="../../static/image/logo.png" alt="">
-</a>
-            <div class="title">
-                <p>model</p>
-            </div>
-            <div class="category">
-                <a href="../../../user/templates/user/home.html">logout</a>
-                <a href="">mypage</a>
-            </div>
-            <div class="keywords">
-                <p>keywords</p>
-            </div>
+    <a href="../../../user/templates/user/home.html">
+        <img class="logo" src="{% static 'image/logo.png' %}" alt="logo">
+    </a>
+    <div class="title">
+        <p>model</p>
+    </div>
+    <div class="category">
+        {% if user.is_authenticated %}
+            <a id="user_name" href="{% url 'profile' user.pk %}">{{ user.username }}</a>
+            <a href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">login</a>
+            <a href="{% url 'signup' %}">registration</a>
+        {% endif %}
+    </div>
+    <div class="keywords">
+        <div class="keywords_title">
+           <p>keywords</p>
+        </div>
+        <div class="keywords_button">
+            <a href="{% url 'filter_cute' %}"><button class="cute">큐티</button></a>
+        <a href="{% url 'filter_cool' %}"><button class="cool">청량</button></a>
+        <a href="{% url 'filter_bnw' %}"><button class="mono">흑백</button></a>
+        <a href="{% url 'filter_plus' %}"><button class="plus">플러스모델</button></a>
+        </div>
+    </div>
 
-
-   <div class="row-key">
-           <a href="{% url 'filter_cute' %}"><button class="sixth"> 큐티 </button></a>
-    <a href="{% url 'filter_cool' %}"><button class="sixth"> 청량 </button></a>
-    <a href="{% url 'filter_bnw' %}"><button class="sixth"> 흑백사진 </button></a>
-    <a href="{% url 'filter_plus' %}"><button class="sixth"> 플러스모델 </button></a>
-   </div>
-
-        <div class="uploadpost">
-        <a href="{% url 'model_post' %}"><button class="sixth">Upload Image</button></a>
+        <div class="upload_post">
+        <a href="{% url 'model_post' %}"><button>upload</button></a>
         </div>
 
 {% block content %}
