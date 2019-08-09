@@ -7,24 +7,25 @@
             <link rel="stylesheet" href="{% static 'css/home.css' %}">
         </head>
         <body>
-            <img class="green" src="{% static 'image/green.png' %}" alt="green">
-            <img class="main" src="{% static 'image/main.jpg' %}" alt="main">
-            <a class="model" href="{% url 'model' %}">
-                <img src="{% static 'image/white.png' %}" alt="white">
-                <p>model</p>
-            </a>
-            <a class="photographer" href="{% url 'photo' %}">
-                <img src="{% static 'image/yellow.png' %}" alt="yellow">
-                <p>photographer</p>
-            </a>
-            <a class="board" href="{% url 'board_index' %}">
-                <img src="{% static 'image/blue.png' %}" alt="blue">
-                <p>matching</p>
-            </a>
-            {% if user.is_active %}
+            <div class="entire">
+                <img class="green" src="{% static 'image/green.png' %}" alt="green">
+                <img class="main" src="{% static 'image/main.jpg' %}" alt="main">
+                <a class="model" href="{% url 'model' %}">
+                    <img src="{% static 'image/white.png' %}" alt="white">
+                    <p>model</p>
+                </a>
+                <a class="photographer" href="{% url 'photo' %}">
+                    <img src="{% static 'image/yellow.png' %}" alt="yellow">
+                    <p>photographer</p>
+                </a>
+                <a class="board" href="{% url 'board_index' %}">
+                    <img src="{% static 'image/blue.png' %}" alt="blue">
+                    <p>matching</p>
+                </a>
+                {% if user.is_active %}
                     <a class="login" href="{% url 'profile' user.pk %}">
                         <img src="{% static 'image/yellow2.png' %}" alt="yellow2">
-                    <p>mypage</p>
+                        <p>mypage</p>
                     </a>
                     <a class="registration" href="{% url 'logout' %}">
                         <img src="{% static 'image/red.png' %}" alt="red">
@@ -33,12 +34,13 @@
                 {% else %}
                     <a class="login" href="{% url 'login' %}">
                         <img src="{% static 'image/yellow2.png' %}" alt="yellow2">
-                    <p>login</p>
+                        <p>login</p>
                     </a>
                     <a class="registration" href="{% url 'signup' %}">
                         <img src="{% static 'image/red.png' %}" alt="red">
                         <p>registration</p>
                     </a>
                 {% endif %}
+            </div>
         </body>
     </html>

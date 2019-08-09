@@ -21,13 +21,14 @@
                 <a href="{% url 'signup' %}">registration</a>
             {% endif %}
         </div>
-        <a class="search" href="{% url 'search' %}">search</a>
-        <a class="upload" href="{% url 'post_write' %}">upload</a>
-        <div class="board">
-            {% block content %}{% endblock %}
-        </div>
-        <div class="paginator">
-          {% if is_paginated %}
+        <div class="blog_content">
+            <a class="search" href="{% url 'search' %}">search</a>
+            <a class="upload" href="{% url 'post_write' %}">upload</a>
+            <div class="board">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="paginator">
+                {% if is_paginated %}
                     {% if page_obj.has_previous %}
                         <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">back</a>
                     {% endif %}
@@ -36,6 +37,7 @@
                         <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
                     {% endif %}
                 {% endif %}
+            </div>
         </div>
     </body>
 </html>
